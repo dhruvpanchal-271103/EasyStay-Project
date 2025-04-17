@@ -4,7 +4,7 @@ function Contact() {
       <div className="max-w-4xl w-full text-center">
         <h1 className="text-5xl font-bold mb-6 text-indigo-200">Get In Touch</h1>
         <p className="text-gray-300 mb-12">
-          We’re here to help with any questions, comments, or support needs.
+          We're here to help with any questions, comments, or support needs.
           Reach out to us, and we'll get back to you as soon as possible!
         </p>
 
@@ -18,7 +18,7 @@ function Contact() {
             <p className="text-gray-400">
               Reach us directly at:{" "}
               <a href="mailto:dhruvpan2711@gmail.com" className="text-indigo-400 hover:underline">
-                dhruvpan2711@gmail.com
+                support@gmail.com
               </a>
             </p>
           </div>
@@ -38,7 +38,7 @@ function Contact() {
               <span className="text-green-300 text-3xl">📞</span>
             </div>
             <h3 className="text-2xl font-semibold text-green-300 mb-2">Call Us</h3>
-            <p className="text-gray-400">Phone: +91 9714172527</p>
+            <p className="text-gray-400">Phone: +91 1234567890</p>
           </div>
         </div>
 
