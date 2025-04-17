@@ -89,9 +89,9 @@ function Contact() {
   <div className="md:col-span-2">
     <button
       type="submit"
-      className="w-full py-4 font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-md shadow-lg hover:shadow-2xl hover:scale-[1.01] transition duration-300"
+      className="w-full py-4 font-semibold text-white bg-blue-500 hover:bg-blue-800 rounded-md shadow-lg hover:shadow-2xl hover:scale-[1.01] transition duration-300"
     >
-      🚀 Send Message
+    Send Message
     </button>
   </div>
 </form>

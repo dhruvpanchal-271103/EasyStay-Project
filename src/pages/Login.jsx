@@ -19,7 +19,7 @@ function Login() {
           />
           <button
             type="submit"
-            className="w-full py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold rounded-md transition duration-300"
+            className="w-full py-3 bg-blue-500 hover:bg-blue-800 transition transform hover:scale-105 duration-300 text-white font-semibold rounded-md transition duration-300"
           >
             Login
           </button>

@@ -8,7 +8,9 @@ function HostRegistration() {
     email: "",
     phone: "",
     propertyType: "",
+    streetAddress: "",
     city: "",
+    zipCode: "",
     description: "",
   });
 
@@ -109,26 +111,22 @@ function HostRegistration() {
               </div>
             </div>
 
-            {/* Property Type & City */}
+            {/* Address Inputs */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="propertyType" className="block text-gray-800 font-semibold mb-2">
-                  Property Type
+                <label htmlFor="streetAddress" className="block text-gray-800 font-semibold mb-2">
+                  Street Address
                 </label>
-                <select
-                  id="propertyType"
-                  name="propertyType"
-                  value={formData.propertyType}
+                <input
+                  type="text"
+                  id="streetAddress"
+                  name="streetAddress"
+                  value={formData.streetAddress}
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
-                  <option value="">Select property type</option>
-                  <option value="apartment">Apartment</option>
-                  <option value="house">House</option>
-                  <option value="villa">Villa</option>
-                  <option value="flat">Flat</option>
-                </select>
+                  placeholder="Enter your street address"
+                />
               </div>
 
               <div>
@@ -148,7 +146,47 @@ function HostRegistration() {
               </div>
             </div>
 
-            {/* Description */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="zipCode" className="block text-gray-800 font-semibold mb-2">
+                  Zip Code
+                </label>
+                <input
+                  type="text"
+                  id="zipCode"
+                  name="zipCode"
+                  value={formData.zipCode}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter your zip code"
+                />
+              </div>
+        
+
+            {/* Property Type */}
+            <div>
+              <label htmlFor="propertyType" className="block text-gray-800 font-semibold mb-2">
+                Property Type
+              </label>
+              <select
+                id="propertyType"
+                name="propertyType"
+                value={formData.propertyType}
+                onChange={handleInputChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">Select property type</option>
+                <option value="apartment">Apartment</option>
+                <option value="house">House</option>
+                <option value="villa">Villa</option>
+                <option value="flat">Flat</option>
+              </select>
+            </div>
+            </div>
+
+            {/* Property Description */}
             <div>
               <label htmlFor="description" className="block text-gray-800 font-semibold mb-2">
                 Property Description

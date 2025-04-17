@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
@@ -19,9 +18,7 @@ function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  
 
   return (
     <div className="relative">
@@ -102,7 +99,12 @@ function Hero() {
           ].map((card, i) => (
             <div key={i} className="border rounded-lg overflow-hidden shadow-lg">
               <Link to={card.link}>
-                <img src={card.img} alt={card.title} className="w-full h-64 object-cover" />
+                <img
+                  src={card.img}
+                  alt={card.title}
+                  className="w-full h-64 object-cover transition-transform duration-300 ease-in-out hover:scale-115"
+                />
+
               </Link>
               <div className="p-4">
                 <h3 className="text-2xl font-semibold text-gray-800">{card.title}</h3>
@@ -140,7 +142,7 @@ function Hero() {
                 <img
                   src={property.img}
                   alt={property.title}
-                  className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-115"
                 />
               </Link>
               <div className="p-4">
@@ -153,46 +155,38 @@ function Hero() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-gray-100 text-center">
-        <h2 className="text-3xl font-bold mb-10 text-gray-800">What Our Customers Say</h2>
-        <div className="flex flex-col md:flex-row justify-center gap-12 px-6 md:px-20">
-          {[
-            {
-              quote: "Easystay helped me find the perfect place for my family vacation. The booking was seamless, and the property was exactly as described!",
-              name: "Jane Doe",
-              role: "Happy Customer",
-            },
-            {
-              quote: "I had an amazing experience! The platform is so easy to use, and the customer support was outstanding. Highly recommend!",
-              name: "John Smith",
-              role: "Frequent Traveler",
-            },
-            {
-              quote: "The property listing was accurate and the host was incredibly welcoming. Will definitely use Easystay again for future trips!",
-              name: "Emily Carter",
-              role: "Returning Guest",
-            },
-          ].map((testimonial, i) => (
-            <div key={i} className="max-w-xs bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-              <p className="text-lg text-gray-700 mb-4 italic">"{testimonial.quote}"</p>
-              <p className="font-semibold text-gray-800 text-lg">{testimonial.name}</p>
-              <p className="text-sm text-gray-500">{testimonial.role}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-     {/* Scroll-to-Top Arrow */}
-{showScrollTop && (
-  <button
-    onClick={scrollToTop}
-    className="fixed bottom-6 right-6 transform -translate-x-1/2 z-50 bg-blue-500 hover:bg-blue-800 text-white text-3xl px-3 py-2 rounded-full shadow-lg transition-all duration-500 ease-in-out"
-    title="Back to Top"
-  >
-    ↑
-  </button>
-)}
+     {/* Testimonials */}
+<section className="py-20 bg-gray-100 text-center">
+  <h2 className="text-3xl font-bold mb-10 text-gray-800">What Our Customers Say</h2>
+  <div className="flex flex-col md:flex-row justify-center gap-12 px-6 md:px-20">
+    {[
+      {
+        quote: "Easystay helped me find the perfect place for my family vacation. The booking was seamless, and the property was exactly as described!",
+        name: "Jane Doe",
+        role: "Happy Customer",
+      },
+      {
+        quote: "I had an amazing experience! The platform is so easy to use, and the customer support was outstanding. Highly recommend!",
+        name: "John Smith",
+        role: "Frequent Traveler",
+      },
+      {
+        quote: "The property listing was accurate and the host was incredibly welcoming. Will definitely use Easystay again for future trips!",
+        name: "Emily Carter",
+        role: "Returning Guest",
+      },
+    ].map((testimonial, i) => (
+      <div
+        key={i}
+        className="max-w-xs bg-white p-6 rounded-lg shadow-lg transform hover:translate-y-[-10px] transition-transform duration-300 ease-in-out"
+      >
+        <p className="text-lg text-gray-700 mb-4 italic">"{testimonial.quote}"</p>
+        <p className="font-semibold text-gray-800 text-lg">{testimonial.name}</p>
+        <p className="text-sm text-gray-500">{testimonial.role}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
     </div>
   );

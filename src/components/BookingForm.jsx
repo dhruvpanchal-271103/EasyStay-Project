@@ -3,15 +3,12 @@ function BookingForm() {
     <form className="space-y-4 mt-4">
       {/* Name Section: First Name and Last Name in a single line */}
       <div className="flex space-x-4">
-        
         <input
           type="text"
           placeholder="First Name"
           className="w-full md:w-1/2 p-2 rounded bg-gray-700 border border-gray-600"
           required
         />
-
-       
         <input
           type="text"
           placeholder="Last Name"
@@ -20,17 +17,27 @@ function BookingForm() {
         />
       </div>
 
-   
-      <input
-        type="tel"
-        placeholder="Phone Number"
-        className="w-full p-2 rounded bg-gray-700 border border-gray-600"
-        required
-      />
-
-     
+      {/* Email Field */}
       <div className="flex space-x-4">
-       
+
+        <input
+          type="email"
+          placeholder="Email Address"
+          className="w-full md:w-1/2 p-2 rounded bg-gray-700 border border-gray-600"
+          required
+        />
+
+        {/* Phone Number */}
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          className="w-full md:w-1/2 p-2 rounded bg-gray-700 border border-gray-600"
+          required
+        />
+      </div>
+
+      {/* Check-in and Check-out Dates */}
+      <div className="flex space-x-4">
         <div className="flex flex-col w-1/2">
           <label className="text-gray-300 text-sm">Check-in</label>
           <input
@@ -40,7 +47,6 @@ function BookingForm() {
           />
         </div>
 
-       
         <div className="flex flex-col w-1/2">
           <label className="text-gray-300 text-sm">Check-out</label>
           <input
@@ -51,7 +57,7 @@ function BookingForm() {
         </div>
       </div>
 
-  
+      {/* Members */}
       <input
         type="number"
         placeholder="Member/Members"
@@ -59,7 +65,7 @@ function BookingForm() {
         required
       />
 
-     
+      {/* Submit Button */}
       <button
         type="submit"
         className="w-full bg-blue-500 p-2 rounded transition-colors duration-[800ms] hover:bg-blue-800"

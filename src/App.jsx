@@ -12,7 +12,7 @@ import Register from './pages/Register';
 import { PropertyProvider } from './context/PropertyContext';
 import BecomeHost from './pages/BecomeHost';
 import HostRegistration from './pages/HostRegistration';
-import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop component
+
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
       <PropertyProvider>
         <div className="flex flex-col min-h-screen bg-gray-900 text-white">
           <Navbar />
-          <ScrollToTop /> {/* Add ScrollToTop component here */}
+          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/listings" element={<Listings />} />

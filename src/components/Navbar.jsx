@@ -18,10 +18,10 @@ function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="space-x-14 text-lg text-gray-200 font-medium hidden md:flex">
-          <Link to="/" className="hover:text-blue-500 transition-colors duration-300">Home</Link>
-          <Link to="/listings" className="hover:text-blue-500 transition-colors duration-300">Properties</Link>
-          <Link to="/about" className="hover:text-blue-500 transition-colors duration-300">About Us</Link>
-          <Link to="/contact" className="hover:text-blue-500 transition-colors duration-300">Contact Us</Link>
+          <Link to="/" className="hover:text-blue-500 transition-colors duration-200">Home</Link>
+          <Link to="/listings" className="hover:text-blue-500 transition-colors duration-200">Properties</Link>
+          <Link to="/about" className="hover:text-blue-500 transition-colors duration-200">About Us</Link>
+          <Link to="/contact" className="hover:text-blue-500 transition-colors duration-200">Contact Us</Link>
         </div>
 
         {/* Right section: Login */}
