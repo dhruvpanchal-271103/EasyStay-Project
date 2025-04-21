@@ -68,7 +68,7 @@ function BookingForm() {
       {/* Submit Button */}
       <button
         type="submit"
-        className="w-full bg-blue-500 p-2 rounded transition-colors duration-[800ms] hover:bg-blue-800"
+        className="w-full bg-blue-500 hover:bg-blue-800 transition transform hover:scale-105 duration-300 p-2 rounded"
       >
         Book Now
       </button>

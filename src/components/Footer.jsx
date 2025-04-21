@@ -9,7 +9,7 @@ function Footer() {
         {/* Brand Info */}
         <div>
           <h2 className="text-3xl font-bold text-blue-400 mb-4">Easystay</h2>
-          <p className="text-sm text-gray-300 leading-relaxed">
+          <p className="text-sm text-gray-300 leading-relaxed md:w-3/4">
             Your trusted partner for the perfect getaway. Discover handpicked places, book with ease, and enjoy world-class stays.
           </p>
         </div>

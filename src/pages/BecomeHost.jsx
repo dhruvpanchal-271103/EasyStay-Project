@@ -13,18 +13,28 @@ function BecomeHost() {
           Earn income by sharing your space. Connect with travelers from around the world
           with full control and peace of mind.
         </p>
-        <Link
-          to="/host-registration"
-          className="bg-blue-500 hover:bg-blue-700 transition duration-300 text-white font-semibold px-8 py-3 rounded-md shadow-lg"
-          aria-label="Get started with hosting"
-        >
-          Get Started
-        </Link>
+
+        <div className="flex flex-col md:flex-row justify-center gap-4 mt-4">
+          <Link
+            to="/host-registration"
+            className="bg-blue-500 hover:bg-blue-700 transition duration-300 text-white font-semibold px-8 py-3 rounded-md shadow-lg"
+            aria-label="Get started with hosting"
+          >
+            Get Started
+          </Link>
+          <Link
+            to="/host-dashboard-login" 
+            className="bg-gray-700 hover:bg-gray-600 transition duration-300 text-white font-semibold px-8 py-3 rounded-md shadow-lg"
+            aria-label="Already a host login"
+          >
+            Already a Host
+          </Link>
+        </div>
       </div>
 
       {/* Steps Section */}
       <div className="mt-20 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center">
-        {[ 
+        {[
           {
             title: "List Your Property",
             desc: "Create a listing with photos, pricing, and availability details.",
