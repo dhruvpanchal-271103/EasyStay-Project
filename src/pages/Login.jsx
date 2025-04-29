@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -14,19 +13,21 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const storedUser = JSON.parse(localStorage.getItem("easystayUser"));
+    const users = JSON.parse(localStorage.getItem("easystayUsers")) || [];
 
-    if (
-      storedUser &&
-      storedUser.email === credentials.email &&
-      storedUser.password === credentials.password
-    ) {
-      setIsLoggedIn(true); // set login state
+    const matchedUser = users.find(
+      (user) => user.email === credentials.email && user.password === credentials.password
+    );
+
+    if (matchedUser) {
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("currentUser", JSON.stringify(matchedUser));
+      setIsLoggedIn(true);
       setTimeout(() => {
-        navigate("/"); // Redirect after a short delay
-      }, 1500);
+        window.location.href = "/"; // force reload to refresh app state
+      }, 1000);
     } else {
-      alert("Invalid credentials. Please try again.");
+      alert("Invalid email or password");
     }
   };
 
@@ -72,7 +73,6 @@ function Login() {
         ) : (
           <div className="text-center space-y-4">
             <h2 className="text-2xl font-semibold text-green-400">Login successful!</h2>
-            <p className="text-gray-300">Redirecting to your dashboard...</p>
             <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-400 mx-auto" />
           </div>
         )}

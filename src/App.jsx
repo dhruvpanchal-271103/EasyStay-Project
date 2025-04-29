@@ -19,6 +19,7 @@ import HostDashboard from './pages/HostDashboard';
 import HostDashboardLogin from './pages/HostDashboardLogin';
 import EditProperty from './pages/EditProperty';
 import ScrollToTop from './components/ScrollToTop';
+import BookingPage from './pages/BookingPage';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
               <Route path="/host/add-property" element={<AddProperty />} />
               <Route path="/host-dashboard-login" element={<HostDashboardLogin />} />
               <Route path="/host/edit-property/:index" element={<EditProperty />} />
+              <Route path="/book-now" element={<BookingPage />} />
 
             </Routes>
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
+
 
   const servicesData = [
     {
@@ -28,22 +28,27 @@ function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div className="relative">
       {/* Hero Section */}
       <div className="relative min-h-[90vh] flex items-center justify-center px-6 md:px-12 overflow-hidden">
 
-        <div className="absolute inset-0 bg-gray-900 bg-opacity-60 z-0" />
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
+        {/* Optional: dark gradient overlay for text contrast */}
+        <div className="absolute bg-opacity-40 z-0" />
+
+        {/* Content */}
         <div className={`relative z-10 max-w-3xl w-full text-white text-center transition-all duration-1000 ease-out ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
           <h1 className={`text-5xl md:text-6xl font-extrabold leading-tight drop-shadow-md mb-6 transform transition-all duration-1000 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
             Welcome to <span className="text-blue-400">Easystay</span>
@@ -58,7 +63,7 @@ function Hero() {
             <Link to="/about" className="bg-transparent border border-white hover:bg-white hover:text-blue-800 transition transform hover:scale-105 duration-300 text-white font-semibold px-10 py-3 rounded-md shadow-lg">
               Learn More
             </Link>
-            <Link to="/host" className="bg-blue-500 hover:bg-blue-700 transition transform hover:scale-105 duration-300 text-white font-semibold px-8 py-3 rounded-md shadow-lg">
+            <Link to="/host" className="bg-blue-500 hover:bg-blue-800 transition transform hover:scale-105 duration-300 text-white font-semibold px-8 py-3 rounded-md shadow-lg">
               Rent your house
             </Link>
           </div>
@@ -69,6 +74,7 @@ function Hero() {
           </div>
         </div>
       </div>
+
 
       {/* Services Section */}
       <section className="py-20 bg-gray-100 text-center">
@@ -98,8 +104,12 @@ function Hero() {
 
       {/* Featured Properties Section */}
       <section className="py-20 bg-white">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Featured Properties</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-6 md:px-20">
+        <h2 className="text-4xl font-bold text-center text-gray-800 mb-10 tracking-tight">
+          Featured Properties
+        </h2>
+
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-6 md:px-20">
           {[
             {
               img: "https://images.unsplash.com/photo-1729808641871-8d8b5ade6bbe?w=500&auto=format&fit=crop",
@@ -117,21 +127,38 @@ function Hero() {
               desc: "A charming retreat in the mountains, ideal for nature lovers seeking peace and tranquility.",
             },
           ].map((property, i) => (
-            <div key={i} className="border rounded-lg overflow-hidden shadow-lg group">
-              <Link to="/listings" className="block overflow-hidden">
-                <img src={property.img} alt={property.title} className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-115" />
-              </Link>
-              <div className="p-4">
-                <h3 className="text-2xl font-semibold text-gray-800">{property.title}</h3>
-                <p className="text-lg text-gray-600 mb-2">{property.desc}</p>
-                <Link to="/listings" className="text-blue-600 hover:underline font-medium">
-                  View Details
-                </Link>
+            <div
+              key={i}
+              className="bg-white border rounded-xl overflow-hidden shadow-md transition-shadow duration-300 transform group"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={property.img}
+                  alt={property.title}
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{property.title}</h3>
+                <p className="text-gray-600 text-base">{property.desc}</p>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Explore More Button - Now placed below the listings */}
+        <div className="flex justify-center mt-14">
+          <Link
+            to="/listings"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded shadow-lg transition-transform transform hover:scale-105 duration-300"
+          >
+            Explore More Places
+          </Link>
+        </div>
       </section>
+
+
+
 
       {/* Testimonials */}
       <section className="py-20 bg-gray-100 text-center">

@@ -1,18 +1,38 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Add useNavigate
 import { FiMenu, FiX } from "react-icons/fi";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate(); // useNavigate hook
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const closeSidebar = () => setIsOpen(false);
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("easystayUser"));
-    if (user) setIsLoggedIn(true);
+    const checkLoginStatus = () => {
+      const isLoggedInFlag = localStorage.getItem("isLoggedIn");
+      setIsLoggedIn(isLoggedInFlag === "true");
+    };
+
+    checkLoginStatus(); // Check on initial mount
+
+    window.addEventListener("storage", checkLoginStatus); // Listen for storage changes
+
+    return () => {
+      window.removeEventListener("storage", checkLoginStatus);
+    };
   }, []);
+
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("easystayUser");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
+
 
   return (
     <>
@@ -28,26 +48,23 @@ function Navbar() {
           <Link to="/contact" className="hover:text-blue-500 transition-colors duration-200">Contact Us</Link>
         </div>
 
-        {/* Conditional Render for Login / Become a Host */}
-        {!isLoggedIn ? (
-          <div className="hidden md:block">
+        <div className="hidden md:block">
+          {!isLoggedIn ? (
             <Link
               to="/login"
               className="bg-blue-500 text-white px-6 py-1.5 rounded-md transition-colors duration-300 hover:bg-blue-800"
             >
               Login
             </Link>
-          </div>
-        ) : (
-          <div className="hidden md:block">
-            <Link
-              to="/host-registration" // Updated to /host-registration for proper redirection
-              className="bg-blue-500 text-white px-6 py-2 rounded-md transition-colors duration-300 hover:bg-blue-800"
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="bg-red-500 text-white px-6 py-1.5 rounded-md transition-colors duration-300 hover:bg-red-700"
             >
-              Become a Host
-            </Link>
-          </div>
-        )}
+              Logout
+            </button>
+          )}
+        </div>
 
         <button
           className="md:hidden text-white text-2xl"
@@ -66,7 +83,6 @@ function Navbar() {
           <Link to="/about" onClick={closeSidebar}>About Us</Link>
           <Link to="/contact" onClick={closeSidebar}>Contact Us</Link>
 
-          {/* Conditional Render for Login / Become a Host */}
           {!isLoggedIn ? (
             <Link
               to="/login"
@@ -76,18 +92,19 @@ function Navbar() {
               Login
             </Link>
           ) : (
-            <Link
-              to="/host-registration" // Updated to /host-registration for proper redirection
-              onClick={closeSidebar}
-              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-800"
+            <button
+              onClick={() => {
+                handleLogout();
+                closeSidebar();
+              }}
+              className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
             >
-              Become a Host
-            </Link>
+              Logout
+            </button>
           )}
         </nav>
       </div>
 
-      {/* Backdrop */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-40 z-40 md:hidden"

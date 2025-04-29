@@ -33,10 +33,7 @@ function PropertyDetails() {
             <p className="mt-6 text-green-400 leading-relaxed">{property.description}</p>
           </div>
 
-          {/* Booking Form */}
-          <div className="mt-10">
-            <BookingForm />
-          </div>
+         
         </div>
       </div>
     </div>
