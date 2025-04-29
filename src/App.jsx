@@ -19,7 +19,7 @@ import HostDashboard from './pages/HostDashboard';
 import HostDashboardLogin from './pages/HostDashboardLogin';
 import EditProperty from './pages/EditProperty';
 import ScrollToTop from './components/ScrollToTop';
-import BookingPage from './pages/BookingPage';
+import PaymentPage from './pages/PaymentPage';
 
 
 function App() {
@@ -29,10 +29,10 @@ function App() {
         <HostProvider>
           <div className="flex flex-col min-h-screen bg-gray-900 text-white">
             <Navbar />
-            
+
             {/* Add ScrollToTop component here */}
             <ScrollToTop />
-            
+
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/listings" element={<Listings />} />
@@ -48,7 +48,7 @@ function App() {
               <Route path="/host/add-property" element={<AddProperty />} />
               <Route path="/host-dashboard-login" element={<HostDashboardLogin />} />
               <Route path="/host/edit-property/:index" element={<EditProperty />} />
-              <Route path="/book-now" element={<BookingPage />} />
+              <Route path="/payment" element={<PaymentPage />} />
 
             </Routes>
 

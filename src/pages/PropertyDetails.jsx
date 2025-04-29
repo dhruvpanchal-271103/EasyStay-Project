@@ -31,9 +31,9 @@ function PropertyDetails() {
               ₹ {property.price} <span className="text-base text-gray-400">/night</span>
             </p>
             <p className="mt-6 text-green-400 leading-relaxed">{property.description}</p>
+            {/* Pass the price to BookingForm */}
+            <BookingForm price={property.price} />
           </div>
-
-         
         </div>
       </div>
     </div>
