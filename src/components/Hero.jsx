@@ -39,11 +39,11 @@ function Hero() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="/public/videos/hero-background.mp4" type="video/mp4" />
+          className="absolute inset-0 w-full h-full object-cover z-0">
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+
 
         {/* Optional: dark gradient overlay for text contrast */}
         <div className="absolute bg-opacity-40 z-0" />
