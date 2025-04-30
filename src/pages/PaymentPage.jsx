@@ -126,7 +126,7 @@ function PaymentPage() {
             onChange={(e) => setPaymentMethod(e.target.value)}
             className="w-full p-2 rounded bg-gray-700 border border-gray-600"
           >
-            <option value="">--Select Payment Method--</option>
+            <option>--Select Payment Method--</option>
             <option value="credit">Credit Card</option>
             <option value="debit">Debit Card</option>
             <option value="upi">UPI</option>
@@ -250,7 +250,7 @@ function PaymentPage() {
           onClick={handlePayment}
           className="mt-6 w-full bg-blue-500 hover:bg-blue-800 transition transform hover:scale-105 duration-300 p-2 rounded"
         >
-          Proceed to Pay
+          Confirm to Pay
         </button>
       </div>
     </div>
