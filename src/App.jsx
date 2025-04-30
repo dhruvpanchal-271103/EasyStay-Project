@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -21,42 +21,38 @@ import EditProperty from './pages/EditProperty';
 import ScrollToTop from './components/ScrollToTop';
 import PaymentPage from './pages/PaymentPage';
 
-
 function App() {
   return (
-    <BrowserRouter>
-      <PropertyProvider>
-        <HostProvider>
-          <div className="flex flex-col min-h-screen bg-gray-900 text-white">
-            <Navbar />
+    <PropertyProvider>
+      <HostProvider>
+        <div className="flex flex-col min-h-screen bg-gray-900 text-white">
+          <Navbar />
 
-            {/* Add ScrollToTop component here */}
-            <ScrollToTop />
+          {/* Add ScrollToTop component here */}
+          <ScrollToTop />
 
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/listings" element={<Listings />} />
-              <Route path="/property/:id" element={<PropertyDetails />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/host" element={<BecomeHost />} />
-              <Route path="/host-registration" element={<HostRegistration />} />
-              <Route path="/host/dashboard" element={<HostDashboard />} />
-              <Route path="/host/settings" element={<AccountSettings />} />
-              <Route path="/host/add-property" element={<AddProperty />} />
-              <Route path="/host-dashboard-login" element={<HostDashboardLogin />} />
-              <Route path="/host/edit-property/:index" element={<EditProperty />} />
-              <Route path="/payment" element={<PaymentPage />} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/listings" element={<Listings />} />
+            <Route path="/property/:id" element={<PropertyDetails />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/host" element={<BecomeHost />} />
+            <Route path="/host-registration" element={<HostRegistration />} />
+            <Route path="/host/dashboard" element={<HostDashboard />} />
+            <Route path="/host/settings" element={<AccountSettings />} />
+            <Route path="/host/add-property" element={<AddProperty />} />
+            <Route path="/host-dashboard-login" element={<HostDashboardLogin />} />
+            <Route path="/host/edit-property/:index" element={<EditProperty />} />
+            <Route path="/payment" element={<PaymentPage />} />
+          </Routes>
 
-            </Routes>
-
-            <Footer />
-          </div>
-        </HostProvider>
-      </PropertyProvider>
-    </BrowserRouter>
+          <Footer />
+        </div>
+      </HostProvider>
+    </PropertyProvider>
   );
 }
 
