@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 function BecomeHost() {
   return (
     <div className="min-h-screen bg-gray-900 px-6 md:px-20 py-16 font-light">
-      {/* Hero Section */}
       <div className="max-w-4xl mx-auto text-center text-white">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
           Become a Host on{" "}
@@ -32,7 +31,6 @@ function BecomeHost() {
         </div>
       </div>
 
-      {/* Steps Section */}
       <div className="mt-20 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center">
         {[
           {
@@ -67,7 +65,6 @@ function BecomeHost() {
         ))}
       </div>
 
-      {/* Testimonial Section */}
       <div className="mt-24 text-center max-w-3xl mx-auto text-white">
         <blockquote className="italic text-xl text-gray-300">
           “EasyStay made it super easy to turn my extra room into a source of income.

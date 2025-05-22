@@ -30,10 +30,8 @@ function Hero() {
 
   return (
     <div className="relative">
-      {/* Hero Section */}
+     
       <div className="relative min-h-[90vh] flex items-center justify-center px-6 md:px-12 overflow-hidden">
-
-        {/* Background Video */}
         <video
           autoPlay
           muted
@@ -46,10 +44,8 @@ function Hero() {
         </video>
 
 
-        {/* Optional: dark gradient overlay for text contrast */}
         <div className="absolute bg-opacity-40 z-0" />
 
-        {/* Content */}
         <div className={`relative z-10 max-w-3xl w-full text-white text-center transition-all duration-1000 ease-out ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
           <h1 className={`text-5xl md:text-6xl font-extrabold leading-tight drop-shadow-md mb-6 transform transition-all duration-1000 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
             Welcome to <span className="text-blue-400">Easystay</span>
@@ -77,7 +73,6 @@ function Hero() {
       </div>
 
 
-      {/* Services Section */}
       <section className="py-20 bg-gray-100 text-center">
         <h2 className="text-3xl font-bold mb-6 text-gray-800">Our Services</h2>
         <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
@@ -103,7 +98,6 @@ function Hero() {
         </div>
       </section>
 
-      {/* Featured Properties Section */}
       <section className="py-20 bg-white">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-10 tracking-tight">
           Featured Properties
@@ -147,13 +141,12 @@ function Hero() {
           ))}
         </div>
 
-        {/* Explore More Button - Now placed below the listings */}
         <div className="flex justify-center mt-14">
           <Link
             to="/listings"
             className="bg-blue-500 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded shadow-lg transition-transform transform hover:scale-105 duration-300"
           >
-            Explore More Places
+            Explore More Properties
           </Link>
         </div>
       </section>
@@ -161,38 +154,47 @@ function Hero() {
 
 
 
-      {/* Testimonials */}
       <section className="py-20 bg-gray-100 text-center">
-        <h2 className="text-3xl font-bold mb-10 text-gray-800">What Our Customers Say</h2>
-        <div className="flex flex-col md:flex-row justify-center gap-12 px-6 md:px-20">
-          {[
-            {
-              quote:
-                "Easystay helped me find the perfect place for my family vacation. The booking was seamless, and the property was exactly as described!",
-              name: "Jane Doe",
-              role: "Happy Customer",
-            },
-            {
-              quote:
-                "I had an amazing experience! The platform is so easy to use, and the customer support was outstanding. Highly recommend!",
-              name: "John Smith",
-              role: "Frequent Traveler",
-            },
-            {
-              quote:
-                "The property listing was accurate and the host was incredibly welcoming. Will definitely use Easystay again for future trips!",
-              name: "Emily Carter",
-              role: "Returning Guest",
-            },
-          ].map((testimonial, i) => (
-            <div key={i} className="max-w-xs bg-white p-6 rounded-lg shadow-lg transform hover:translate-y-[-10px] transition-transform duration-300 ease-in-out">
-              <p className="text-lg text-gray-700 mb-4 italic">"{testimonial.quote}"</p>
-              <p className="font-semibold text-gray-800 text-lg">{testimonial.name}</p>
-              <p className="text-sm text-gray-500">{testimonial.role}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+  <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-800">
+    What Our Customers Say
+  </h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-20">
+    {[
+      {
+        quote:
+          "Easystay helped me find the perfect place for my family vacation. The booking was seamless, and the property was exactly as described!",
+        name: "Jane Doe",
+        role: "Happy Customer",
+      },
+      {
+        quote:
+          "I had an amazing experience! The platform is so easy to use, and the customer support was outstanding. Highly recommend!",
+        name: "John Smith",
+        role: "Frequent Traveler",
+      },
+      {
+        quote:
+          "The property listing was accurate and the host was incredibly welcoming. Will definitely use Easystay again for future trips!",
+        name: "Emily Carter",
+        role: "Returning Guest",
+      },
+    ].map((testimonial, i) => (
+      <div
+        key={i}
+        className="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:-translate-y-2 duration-300 ease-in-out"
+      >
+        <p className="text-lg text-gray-700 mb-4 italic">
+          "{testimonial.quote}"
+        </p>
+        <p className="font-semibold text-gray-800 text-lg">
+          {testimonial.name}
+        </p>
+        <p className="text-sm text-gray-500">{testimonial.role}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
     </div>
   );
 }

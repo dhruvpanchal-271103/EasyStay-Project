@@ -13,9 +13,7 @@ function About() {
           </p>
         </div>
 
-        {/* Grid for Mission, Vision, Offer, Choose */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-16">
-          {/* Mission */}
           <div className="bg-gray-800 p-6 rounded-xl shadow transition transform hover:scale-105 hover:shadow-xl duration-300">
             <h2 className="text-xl font-semibold text-indigo-300 mb-2">Our Mission</h2>
             <p className="text-gray-400">
@@ -23,7 +21,6 @@ function About() {
             </p>
           </div>
 
-          {/* Vision */}
           <div className="bg-gray-800 p-6 rounded-xl shadow transition transform hover:scale-105 hover:shadow-xl duration-300">
             <h2 className="text-xl font-semibold text-yellow-300 mb-2">Our Vision</h2>
             <p className="text-gray-400">
@@ -31,7 +28,6 @@ function About() {
             </p>
           </div>
 
-          {/* What We Offer */}
           <div className="bg-gray-800 p-6 rounded-xl shadow transition transform hover:scale-105 hover:shadow-xl duration-300">
             <h2 className="text-xl font-semibold text-pink-300 mb-2">What We Offer</h2>
             <ul className="list-disc list-inside text-gray-400 space-y-1">
@@ -42,7 +38,6 @@ function About() {
             </ul>
           </div>
 
-          {/* Why Choose Us */}
           <div className="bg-gray-800 p-6 rounded-xl shadow transition transform hover:scale-105 hover:shadow-xl duration-300">
             <h2 className="text-xl font-semibold text-green-300 mb-2">Why Choose Us</h2>
             <p className="text-gray-400">
@@ -51,9 +46,7 @@ function About() {
           </div>
         </div>
 
-       {/* Our Story & Core Values */}
 <div className="grid gap-12 md:grid-cols-2 mb-16">
-  {/* Our Story */}
   <div className="bg-gray-800 p-8 rounded-xl shadow transition transform hover:scale-105 hover:shadow-xl duration-300">
     <h2 className="text-2xl font-bold text-white mb-3">Our Story</h2>
     <p className="text-gray-400 mb-4">
@@ -66,7 +59,6 @@ function About() {
     </p>
   </div>
 
-  {/* Core Values */}
   <div className="bg-gray-800 p-8 rounded-xl shadow transition transform hover:scale-105 hover:shadow-xl duration-300">
     <h2 className="text-2xl font-bold text-white mb-3">Our Core Values</h2>
     <ul className="list-disc list-inside text-gray-400 space-y-6">
@@ -80,7 +72,6 @@ function About() {
 
 
 
-        {/* Looking Ahead */}
         <div className="text-center max-w-2xl mx-auto mt-16">
           <h2 className="text-2xl font-bold text-white mb-3">Looking Ahead</h2>
           <p className="text-gray-400">

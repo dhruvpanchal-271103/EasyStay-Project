@@ -1,4 +1,3 @@
-// src/context/HostContext.js
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const HostContext = createContext();

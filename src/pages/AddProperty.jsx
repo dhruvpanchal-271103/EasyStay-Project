@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaTrashAlt } from "react-icons/fa"; // Using react-icons for a trash icon
+import { FaTrashAlt } from "react-icons/fa"; 
 
 function AddProperty() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function AddProperty() {
     propertyType: "",
   });
 
-  const [imagePreviews, setImagePreviews] = useState([]); // Array to store image previews
+  const [imagePreviews, setImagePreviews] = useState([]); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,8 +43,8 @@ function AddProperty() {
   };
   
   const handleRemoveImage = (index) => {
-    const newPreviews = imagePreviews.filter((_, i) => i !== index); // Remove the preview at the given index
-    const newImageUrls = propertyData.imageUrls.filter((_, i) => i !== index); // Remove the URL at the same index
+    const newPreviews = imagePreviews.filter((_, i) => i !== index); 
+    const newImageUrls = propertyData.imageUrls.filter((_, i) => i !== index); 
     setImagePreviews(newPreviews);
     setPropertyData((prev) => ({
       ...prev,
@@ -58,7 +58,7 @@ function AddProperty() {
     const existingProperties = JSON.parse(localStorage.getItem("properties")) || [];
     existingProperties.push(propertyData);
     localStorage.setItem("properties", JSON.stringify(existingProperties));
-    // alert("Your property has been added!");
+    alert("Your property has been added!");
     navigate("/host/dashboard");
   };
 
@@ -76,7 +76,6 @@ function AddProperty() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Property Type */}
           <div>
             <label className="block text-sm font-medium mb-1">Property Type</label>
             <select
@@ -94,7 +93,6 @@ function AddProperty() {
             </select>
           </div>
 
-          {/* Description */}
           <div>
             <label className="block text-sm font-medium mb-1">Description</label>
             <textarea
@@ -108,7 +106,6 @@ function AddProperty() {
             />
           </div>
 
-          {/* Location */}
           <div>
             <label className="block text-sm font-medium mb-1">Location</label>
             <input
@@ -122,7 +119,6 @@ function AddProperty() {
             />
           </div>
 
-          {/* Price */}
           <div>
             <label className="block text-sm font-medium mb-1">Price per Night</label>
             <input
@@ -171,7 +167,6 @@ function AddProperty() {
             )}
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-blue-500 hover:bg-blue-800 transition transform hover:scale-105 duration-300 py-3 px-6 rounded-md font-semibold"

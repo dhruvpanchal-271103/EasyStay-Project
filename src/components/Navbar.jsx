@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Add useNavigate
+import { Link, useNavigate } from "react-router-dom"; 
 import { FiMenu, FiX } from "react-icons/fi";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate(); // useNavigate hook
+  const navigate = useNavigate(); 
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const closeSidebar = () => setIsOpen(false);
@@ -16,9 +16,9 @@ function Navbar() {
       setIsLoggedIn(isLoggedInFlag === "true");
     };
 
-    checkLoginStatus(); // Check on initial mount
+    checkLoginStatus(); 
 
-    window.addEventListener("storage", checkLoginStatus); // Listen for storage changes
+    window.addEventListener("storage", checkLoginStatus);
 
     return () => {
       window.removeEventListener("storage", checkLoginStatus);
@@ -75,7 +75,7 @@ function Navbar() {
         </button>
       </nav>
 
-      {/* Sidebar */}
+   
       <div className={`fixed top-0 right-0 w-64 h-full bg-gray-800 text-white p-6 transform transition-transform duration-300 z-50 ${isOpen ? "translate-x-0" : "translate-x-full"} md:hidden`}>
         <nav className="flex flex-col space-y-6 text-lg">
           <Link to="/" onClick={closeSidebar}>Home</Link>

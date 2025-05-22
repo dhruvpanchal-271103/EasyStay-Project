@@ -21,7 +21,6 @@ function Register() {
     e.preventDefault();
     const users = JSON.parse(localStorage.getItem("easystayUsers")) || [];
 
-    // Check if user with same email already exists
     const userExists = users.some((user) => user.email === form.email);
     if (userExists) {
       alert("User with this email already exists.");

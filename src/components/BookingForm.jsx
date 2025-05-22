@@ -46,7 +46,7 @@ function BookingForm({ price }) {
 
   return (
     <form className="space-y-4 mt-4" onSubmit={handleSubmit}>
-      {/* Name Section */}
+      
       <div className="flex space-x-4">
         <input
           type="text"
@@ -66,7 +66,7 @@ function BookingForm({ price }) {
         />
       </div>
 
-      {/* Email & Phone */}
+      
       <div className="flex space-x-4">
         <input
           type="email"
@@ -86,7 +86,7 @@ function BookingForm({ price }) {
         />
       </div>
 
-      {/* Dates */}
+  
       <div className="flex space-x-4">
         <div className="flex flex-col w-1/2">
           <label className="text-gray-300 text-sm">Check-in</label>
@@ -113,7 +113,7 @@ function BookingForm({ price }) {
         </div>
       </div>
 
-      {/* Members */}
+   
       <input
         type="number"
         placeholder="Member/Members"

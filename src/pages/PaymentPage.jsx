@@ -134,7 +134,6 @@ function PaymentPage() {
           </select>
         </div>
 
-        {/* Credit Card Details */}
         {paymentMethod === 'credit' && (
           <div>
             <h4 className="text-xl font-semibold">Credit Card Details</h4>
@@ -167,7 +166,6 @@ function PaymentPage() {
           </div>
         )}
 
-        {/* Debit Card Details */}
         {paymentMethod === 'debit' && (
           <div>
             <h4 className="text-xl font-semibold">Debit Card Details</h4>
@@ -209,7 +207,6 @@ function PaymentPage() {
         )}
 
 
-        {/* UPI Details */}
         {paymentMethod === 'upi' && (
           <div>
             <h4 className="text-xl font-semibold">UPI ID</h4>
@@ -223,7 +220,6 @@ function PaymentPage() {
           </div>
         )}
 
-        {/* Net Banking Details */}
         {paymentMethod === 'netbanking' && (
           <div>
             <h4 className="text-xl font-semibold">Net Banking Details</h4>

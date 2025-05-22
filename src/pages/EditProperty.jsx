@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { FaTrashAlt } from "react-icons/fa"; // Using react-icons for a trash icon
+import { FaTrashAlt } from "react-icons/fa";
 
 function EditProperty() {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ function EditProperty() {
     const selectedProperty = properties[parseInt(index)];
     if (selectedProperty) {
       setPropertyData(selectedProperty);
-      setImagePreviews(selectedProperty.imageUrls); // Set existing image URLs as previews
+      setImagePreviews(selectedProperty.imageUrls); 
     } else {
       alert("Property not found");
       navigate("/host/dashboard");
@@ -38,19 +38,19 @@ function EditProperty() {
 
   const handleImageUpload = (e) => {
     const files = Array.from(e.target.files);
-    const newPreviews = files.map((file) => URL.createObjectURL(file)); // Create a preview for each image
+    const newPreviews = files.map((file) => URL.createObjectURL(file)); 
     setImagePreviews((prev) => [...prev, ...newPreviews]);
 
-    const newImageUrls = files.map((file) => URL.createObjectURL(file)); // Generate object URLs for the images
+    const newImageUrls = files.map((file) => URL.createObjectURL(file)); 
     setPropertyData((prev) => ({
       ...prev,
-      imageUrls: [...prev.imageUrls, ...newImageUrls], // Append the new image URLs
+      imageUrls: [...prev.imageUrls, ...newImageUrls],
     }));
   };
 
   const handleRemoveImage = (index) => {
-    const newPreviews = imagePreviews.filter((_, i) => i !== index); // Remove the preview at the given index
-    const newImageUrls = propertyData.imageUrls.filter((_, i) => i !== index); // Remove the URL at the same index
+    const newPreviews = imagePreviews.filter((_, i) => i !== index); 
+    const newImageUrls = propertyData.imageUrls.filter((_, i) => i !== index); 
     setImagePreviews(newPreviews);
     setPropertyData((prev) => ({
       ...prev,
@@ -61,7 +61,7 @@ function EditProperty() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const properties = JSON.parse(localStorage.getItem("properties")) || [];
-    properties[parseInt(index)] = propertyData; // Update the property data in the array
+    properties[parseInt(index)] = propertyData;
     localStorage.setItem("properties", JSON.stringify(properties));
     alert("Property updated successfully!");
     navigate("/host/dashboard");
@@ -72,7 +72,6 @@ function EditProperty() {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-6">Edit Property</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Property Type */}
           <div>
             <label className="block text-sm font-medium mb-1">Property Type</label>
             <select
@@ -90,7 +89,6 @@ function EditProperty() {
             </select>
           </div>
 
-          {/* Description */}
           <div>
             <label className="block text-sm font-medium mb-1">Description</label>
             <textarea
@@ -103,7 +101,6 @@ function EditProperty() {
             />
           </div>
 
-          {/* Location */}
           <div>
             <label className="block text-sm font-medium mb-1">Location</label>
             <input
@@ -116,7 +113,6 @@ function EditProperty() {
             />
           </div>
 
-          {/* Price */}
           <div>
             <label className="block text-sm font-medium mb-1">Price per Night</label>
             <input
@@ -129,7 +125,6 @@ function EditProperty() {
             />
           </div>
 
-          {/* Image Upload */}
           <div>
             <label className="block text-sm font-medium mb-1">Upload Property Images</label>
             <input
@@ -165,7 +160,6 @@ function EditProperty() {
             )}
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 rounded-md"

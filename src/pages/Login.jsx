@@ -24,7 +24,7 @@ function Login() {
       localStorage.setItem("currentUser", JSON.stringify(matchedUser));
       setIsLoggedIn(true);
       setTimeout(() => {
-        window.location.href = "/"; // force reload to refresh app state
+        window.location.href = "/"; 
       }, 1000);
     } else {
       alert("Invalid email or password");

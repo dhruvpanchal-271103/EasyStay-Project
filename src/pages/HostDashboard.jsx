@@ -8,7 +8,7 @@ function HostDashboard() {
   const handleDelete = (indexToDelete) => {
     const updatedProperties = properties.filter((_, index) => index !== indexToDelete);
     localStorage.setItem("properties", JSON.stringify(updatedProperties));
-    window.location.reload(); // Simple way to update UI after delete
+    window.location.reload(); 
   };
 
   const handleEdit = (indexToEdit) => {
@@ -115,7 +115,6 @@ function HostDashboard() {
           </>
         )}
 
-        {/* Modal for Images */}
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
             <div className="bg-white p-6 rounded-lg max-w-4xl w-full relative">

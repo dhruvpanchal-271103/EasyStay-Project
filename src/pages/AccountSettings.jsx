@@ -20,7 +20,6 @@ function AccountSettings() {
     if (storedData) {
       try {
         const parsed = JSON.parse(storedData);
-        // Remove description if present
         delete parsed.description;
         setFormData(parsed);
         setHost(parsed);

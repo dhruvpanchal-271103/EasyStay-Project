@@ -6,7 +6,7 @@ function Footer() {
     <footer className="bg-gradient-to-tr from-gray-900 to-gray-800 text-white pt-12 pb-6 px-6 md:px-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-gray-700 pb-10">
 
-        {/* Brand Info */}
+        
         <div>
           <h2 className="text-3xl font-bold text-blue-400 mb-4">Easystay</h2>
           <p className="text-sm text-gray-300 leading-relaxed md:w-3/4">
@@ -14,7 +14,6 @@ function Footer() {
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-3 text-sm text-gray-300">
@@ -25,7 +24,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Contact Info */}
+      
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
           <ul className="space-y-3 text-sm text-gray-300">
@@ -35,7 +34,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Social Media */}
+    
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
           <div className="flex space-x-5 text-2xl text-gray-300">
@@ -47,7 +46,6 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="mt-6 text-center text-xs text-gray-500">
         &copy; 2025 <span className="text-blue-400 font-semibold">Easystay</span>. All rights reserved.
       </div>
