@@ -2,14 +2,10 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// https://vite.dev/config/
-export default defineConfig({
-  base: '/EasyStay-Project/',
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' && process.env.VERCEL ? '/' : '/EasyStay-Project/',
+  plugins: [react(), tailwindcss()],
   build: {
     outDir: 'dist',
   },
-})
+}))
