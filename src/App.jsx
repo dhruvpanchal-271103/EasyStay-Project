@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -28,6 +27,7 @@ function App() {
         <div className="flex flex-col min-h-screen bg-gray-900 text-white">
           <Navbar />
 
+          {/* Add ScrollToTop component here */}
           <ScrollToTop />
 
           <Routes>
@@ -46,6 +46,7 @@ function App() {
             <Route path="/host-dashboard-login" element={<HostDashboardLogin />} />
             <Route path="/host/edit-property/:index" element={<EditProperty />} />
             <Route path="/payment" element={<PaymentPage />} />
+
           </Routes>
 
           <Footer />
